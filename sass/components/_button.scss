@@ -7,7 +7,7 @@
     display: inline-block;
     border-radius: 10rem;
     transition: all 0.2s;
-    font-size: 1.6rem;
+    font-size: $default-font-size;
   }
   &:hover {
     transform: translateY(-3px);
@@ -25,5 +25,27 @@
   &--white:visited {
     background-color: $color-white;
     color: $color-grey-dark;
+  }
+}
+
+.btn-text {
+  &:link,
+  &:visited {
+    color: $color-primary;
+    display: inline-block; //inline-block also used on an element where we need the padding margin properties to be added
+    text-decoration: none;
+    border-bottom: 1px solid currentColor;
+    padding: 3px;
+    font-size: $default-font-size;
+  }
+  &:hover {
+    color: $color-white;
+    background-color: $color-primary;
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.15);
+    transform: translateY(-2px);
+  }
+  &:active {
+    box-shadow: 0 0.5rem 1rem rgba($color-black, 0.15);
+    transform: translateY(0);
   }
 }
