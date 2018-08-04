@@ -7,17 +7,27 @@
 }
 
 html {
+  //this defines what 1 rem is
+  //1rem = 10px because as default font-size of browser is 16px we need to default it to 10px
+  //so 10px/16px = 62.5%
   font-size: 62.5%;
-  @include respond(phone) {
-    font-size: 50%;
-  }
-  @include respond(tab-port) {
-    font-size: 60%;
-  }
+
   @include respond(tab-land) {
-    font-size: 70%;
+    //checks if width is less than or equal to 1200px
+    font-size: 56.25%; //9px
   }
+
+  @include respond(tab-port) {
+    //checks if width is less than or equal to 900px
+    font-size: 50%; //8px
+  }
+
+  // @include respond(phone) {
+  //   //checks if width is less than or equal to 600px
+  //   font-size: 30%; //4.8px
+  // }
+
   @include respond(big-desktop) {
-    font-size: 80%;
+    font-size: 75%; //12px
   }
 }

@@ -13,11 +13,11 @@
   [1200px-1800px]-   is where our normal styles apply
   1800px+:   Big Desktop
 */
-@mixin respond-phone {
-  @media (max-width: 600px) {
-    @content;
-  }
-}
+// @mixin respond-phone {
+//   @media (max-width: 600px) {
+//     @content;
+//   }
+// }
 
 /*
   max-width specifies that as if the width is <600px
@@ -26,28 +26,30 @@
   -tab-port
   -tab-land
   -big-desktop
+  1em = 16px
 */
 @mixin respond($breakpoint) {
   @if $breakpoint == phone {
-    @media (max-width: 600px) {
+    @media (max-width: 37.5em) {
+      //37.5em = 600px = 600/16
       //applied if the width is less than or equal to 600px
       @content;
     }
   }
   @if $breakpoint == tab-port {
-    @media (max-width: 900px) {
+    @media (max-width: 56.25em) {
       //width is less than or equal to 900px
       @content;
     }
   }
   @if $breakpoint == tab-land {
-    @media (max-width: 1200px) {
+    @media (max-width: 75em) {
       //applied if the width is less than or equal to 1200px
       @content;
     }
   }
   @if $breakpoint == big-desktop {
-    @media (min-width: 1800px) {
+    @media (min-width: 112.5em) {
       //applied if the min-width of the screen is >=1800px
       @content;
     }
